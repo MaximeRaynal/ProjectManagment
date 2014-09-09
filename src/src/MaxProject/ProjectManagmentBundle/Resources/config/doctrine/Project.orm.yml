@@ -1,0 +1,31 @@
+MaxProject\ProjectManagmentBundle\Entity\Project:
+    type: entity
+    table: Project
+    id:
+        id:
+            type: string
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+        description:
+            type: text
+        dateStart:
+            type: date
+        dateEnd:
+            type: date
+        avaibleLabel:
+            type: array
+        axes:
+            type: array
+
+    onToMany:
+        members:
+            targetEntity: User
+            mappedBy: id
+        backlog:
+            targetEntity: Task
+            mappedBy: id
+        sprints:
+            targetEntity: Sprint
+            mappedBy: id

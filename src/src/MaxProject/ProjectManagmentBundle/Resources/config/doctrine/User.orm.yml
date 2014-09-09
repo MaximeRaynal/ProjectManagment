@@ -1,0 +1,20 @@
+MaxProject\ProjectManagmentBundle\Entity\User:
+    type: entity
+    table: User
+    id:
+        id:
+            type: string
+            generator: { strategy: AUTO }
+    fields:
+        login:
+            type: string
+        mail:
+            type: string
+        fullName:
+            type: text
+        pass:
+            type: string
+        role:
+            type: string
+        trelloToken:
+            type: string

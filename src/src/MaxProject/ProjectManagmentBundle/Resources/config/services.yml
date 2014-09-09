@@ -1,0 +1,7 @@
+parameters:
+#    max_project_project_managment.example.class: MaxProject\ProjectManagmentBundle\Example
+
+services:
+#    max_project_project_managment.example:
+#        class: %max_project_project_managment.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

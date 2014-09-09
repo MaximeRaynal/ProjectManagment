@@ -1,0 +1,45 @@
+MaxProject\ProjectManagmentBundle\Entity\Task:
+    type: entity
+    table: Task
+    id:
+        id:
+            type: string
+            generator: { strategy: AUTO }
+    fields:
+        shortName:
+            type: string
+            unique: true
+        name:
+            type: string
+        description:
+            type: text
+        axe:
+            type: string
+        difficulty:
+            type: integer
+        labels:
+            type: array
+        dueDate:
+            type: date
+        state:
+            type: string
+    oneToMany:
+        attachments:
+            targetEntity: Attachment
+            mappedBy: id
+        associateMembers:
+            targetEntity: User
+            mappedBy: id
+        subTask:
+            targetEntity: Task
+            mappedBy: id
+    manyToOne:
+        project:
+            targetEntity: Project
+            inversedBy: backlog
+            joinColumn:
+                name: projectId
+                referencedColumnName: id
+        parentTask:
+            targetEntity: Task
+            inversedBy: subTask

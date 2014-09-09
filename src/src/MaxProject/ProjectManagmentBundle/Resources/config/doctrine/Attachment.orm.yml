@@ -1,0 +1,21 @@
+MaxProject\ProjectManagmentBundle\Entity\Attachment:
+    type: entity
+    table: Attachment
+    id:
+        id:
+            type: string
+            generator: { strategy: AUTO }
+    fields:
+        postDate:
+            type: date
+    manyToOne:
+        author:
+            targetEntity: User
+            joinColumn:
+                name: userId
+                referencedColumnName: id
+        task:
+            targetEntity: Task
+            joinColumn:
+                name: taskId
+                referencedColumnName: id

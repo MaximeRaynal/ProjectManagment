@@ -1,0 +1,16 @@
+MaxProject\ProjectManagmentBundle\Entity\Message:
+    type: entity
+    table: Message
+    id:
+        id:
+            type: string
+            generator: { strategy: AUTO }
+    fields:
+        message:
+            type : text
+    manyToOne:
+        author:
+            targetEntity: User
+            joinColumn:
+                name: author
+                referencedColumnName: id

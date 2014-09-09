@@ -1,0 +1,25 @@
+MaxProject\ProjectManagmentBundle\Entity\Sprint:
+    type: entity
+    table: Sprint
+    id:
+        id:
+            type: string
+            generator: { strategy: AUTO }
+    fields:
+        beginDate:
+            type: date
+        endDate:
+            type: date
+        nbIteration:
+            type: integer
+    oneToMany:
+        tasks:
+            targetEntity: Task
+            mappedBy: id
+    manyToOne:
+        project:
+            targetEntity: Project
+            inversedBy: sprints
+            joinColumn:
+                name: projectId
+                referencedColumnName: id

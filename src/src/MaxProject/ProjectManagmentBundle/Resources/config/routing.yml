@@ -1,0 +1,63 @@
+MaxProjectProjectManagment_homepage:
+    path:     /
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+
+MaxProjectProjectManagment_resetTestData:
+    path: /resetTestData
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:resetTestData}
+
+MaxProjectProjectManagment_phpinfo:
+    path: /phpinfo
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:phpinfo}
+
+MaxProjectProjectManagment_projects:
+    path:     /projects.{_format}
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    methods: GET
+    requirements:
+        _format: json
+
+MaxProjectProjectManagment_project:
+    path:     /project/{projectId}.{_format}
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    methods: GET
+
+MaxProjectProjectManagment_update_project:
+    path:     /project/{projectId}
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    methods: POST
+
+MaxProjectProjectManagment_create_project:
+    path:     /project
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    methods: PUT
+
+MaxProjectProjectManagment_delete_project:
+    path:     /project/{projectId}
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    methods: DELETE
+
+MaxProjectProjectManagment_project_backlog:
+    path:     /project/{projectId}/backlog.{_format}
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    methods: GET
+
+MaxProjectProjectManagment_task:
+    path:     /task/{taskId}
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    methods: GET
+
+MaxProjectProjectManagment_update_task:
+    path:     /task/{taskId}
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    methods: POST
+
+MaxProjectProjectManagment_create_task:
+    path:     /task
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    methods: PUT
+
+MaxProjectProjectManagment_delete_task:
+    path:     /task/{taskId}
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    methods: DELETE

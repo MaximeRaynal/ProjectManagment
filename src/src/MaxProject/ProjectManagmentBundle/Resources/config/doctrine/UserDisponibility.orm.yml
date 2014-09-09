@@ -1,0 +1,22 @@
+MaxProject\ProjectManagmentBundle\Entity\UserDisponibility:
+    type: entity
+    table: UserDisponibility
+    id:
+        id:
+            type: string
+            generator: { strategy: AUTO }
+    fields:
+        matrix:
+            type: array
+
+    oneToOne:
+        project:
+            targetEntity: Project
+            joinColumn:
+                name: projectId
+                referencedColumnName: id
+        user:
+            targetEntity: User
+            joinColumn:
+                name: projectId
+                referencedColumnName: id
