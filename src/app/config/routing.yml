@@ -1,0 +1,4 @@
+max_project_project_managment:
+    resource: "@MaxProjectProjectManagmentBundle/Resources/config/routing.yml"
+    prefix:   /
+
