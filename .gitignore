@@ -6,3 +6,4 @@ src/vendor/
 src/app/config/parameters.yml
 *.sublime-project
 *.sublime-workspace
+*.sqlite
