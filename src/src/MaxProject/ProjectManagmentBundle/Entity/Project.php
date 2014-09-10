@@ -27,6 +27,9 @@ class Project {
 
     private $sprints;
 
+    public function __construct() {
+    }
+
     /**
      * Get id
      *
