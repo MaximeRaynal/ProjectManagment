@@ -17,7 +17,10 @@ RUN echo 'deb-src http://ppa.launchpad.net/nginx/stable/ubuntu trusty main' >> /
 RUN apt-get -y update
 
 # Install prerequirement
-RUN apt-get install -y --force-yes nginx php5-sqlite php5-cli vim php5-fpm --fix-missing
+RUN apt-get install -y --force-yes nginx php5-sqlite php5-cli vim php5-fpm curl --fix-missing
+
+RUN curl -sS https://getcomposer.org/installer | php
+RUN mv composer.phar /usr/local/bin/composer
 
 RUN mkdir /var/www/
 
