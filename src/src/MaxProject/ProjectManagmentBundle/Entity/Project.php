@@ -3,9 +3,9 @@
 namespace MaxProject\ProjectManagmentBundle\Entity;
 
 /**
- * Un project et le plus haut niveau atomique
+ * Un project est le plus haut niveau atomique
  */
-class Project {
+class Project implements \JsonSerializable {
 
     private $id;
 
@@ -176,5 +176,12 @@ class Project {
     public function getAxes()
     {
         return $this->axes;
+    }
+
+    public function JsonSerialize()
+    {
+        $vars = get_object_vars($this);
+
+        return $vars;
     }
 }

@@ -1,63 +1,66 @@
 MaxProjectProjectManagment_homepage:
     path:     /
-    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Project:index }
 
 MaxProjectProjectManagment_resetTestData:
     path: /resetTestData
-    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:resetTestData}
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Project:resetTestData}
 
 MaxProjectProjectManagment_phpinfo:
     path: /phpinfo
-    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:phpinfo}
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Project:phpinfo}
 
 MaxProjectProjectManagment_projects:
     path:     /projects.{_format}
-    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Project:index }
     methods: GET
     requirements:
         _format: json
 
 MaxProjectProjectManagment_project:
-    path:     /project/{projectId}.{_format}
-    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    path:     /project/id-{id}.{_format}
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Project:project }
     methods: GET
+    requirements:
+        _format: json
+
 
 MaxProjectProjectManagment_update_project:
     path:     /project/{projectId}
-    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Project:index }
     methods: POST
 
 MaxProjectProjectManagment_create_project:
     path:     /project
-    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Project:index }
     methods: PUT
 
 MaxProjectProjectManagment_delete_project:
     path:     /project/{projectId}
-    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Project:index }
     methods: DELETE
 
 MaxProjectProjectManagment_project_backlog:
     path:     /project/{projectId}/backlog.{_format}
-    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Project:index }
     methods: GET
 
 MaxProjectProjectManagment_task:
     path:     /task/{taskId}
-    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Project:index }
     methods: GET
 
 MaxProjectProjectManagment_update_task:
     path:     /task/{taskId}
-    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Project:index }
     methods: POST
 
 MaxProjectProjectManagment_create_task:
     path:     /task
-    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Project:index }
     methods: PUT
 
 MaxProjectProjectManagment_delete_task:
     path:     /task/{taskId}
-    defaults: { _controller: MaxProjectProjectManagmentBundle:Default:index }
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Project:index }
     methods: DELETE
