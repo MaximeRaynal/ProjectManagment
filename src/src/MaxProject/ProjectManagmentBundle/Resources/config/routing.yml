@@ -12,7 +12,7 @@ MaxProjectProjectManagment_phpinfo:
 
 MaxProjectProjectManagment_projects:
     path:     /projects.{_format}
-    defaults: { _controller: MaxProjectProjectManagmentBundle:Project:index }
+    defaults: { _controller: MaxProjectProjectManagmentBundle:Project:projects }
     methods: GET
     requirements:
         _format: json
