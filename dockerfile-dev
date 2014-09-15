@@ -12,8 +12,8 @@ MAINTAINER Maxime Raynal - <me@maxproject.fr>
 
 # Make sure the package repository is up to date
 ADD sources.list /etc/apt/sources.list
-RUN echo 'deb http://ppa.launchpad.net/nginx/stable/ubuntu trusty main' >> /etc/apt/sources.list
-RUN echo 'deb-src http://ppa.launchpad.net/nginx/stable/ubuntu trusty main' >> /etc/apt/sources.list
+#RUN echo 'deb http://ppa.launchpad.net/nginx/stable/ubuntu trusty main' >> /etc/apt/sources.list
+#RUN echo 'deb-src http://ppa.launchpad.net/nginx/stable/ubuntu trusty main' >> /etc/apt/sources.list
 RUN apt-get -y update
 
 # Install prerequirement
