@@ -21,11 +21,15 @@ class ProjectController extends Controller
         return $this->render('');
     }
 
+    public function projectsAction() {
+        $projects = $this->getDoctrine()->getRepository('MaxProjectProjectManagmentBundle:Project')->findAll();
+        return $this->render('json.twig', array('data' => $projects));
+    }
+
     /**
      * @ParamConverter("project", class="MaxProjectProjectManagmentBundle:Project")
      */
     public function projectAction(Project $project) {
-        //var_dump($project);
         return $this->render('json.twig', array('data' => $project));
     }
 }
