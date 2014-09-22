@@ -2,11 +2,14 @@
    présent sur toutes les pages #}
 {% block assets %}
 
-{% stylesheets 'bundles/maxproject_webapp/css/*' filter='cssrewrite' %}
+{% stylesheets '@MaxProjectWebAppBundle/Resources/public/css/*' filter='cssrewrite' %}
     <link rel="stylesheet" href="{{ asset_url }}" />
 {% endstylesheets %}
 
-{% javascripts '@MaxProjectWebAppBundle/Resources/public/js/globals/*' %}
+{% javascripts  '@MaxProjectWebAppBundle/Resources/public/js/globals/angular.js'
+                '@MaxProjectWebAppBundle/Resources/public/js/globals/jquery.js'
+                '@MaxProjectWebAppBundle/Resources/public/js/globals/bootstrap.js'
+                '@MaxProjectWebAppBundle/Resources/public/js/controller/main.js' %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}
 
