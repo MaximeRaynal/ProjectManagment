@@ -1,12 +1,12 @@
 {# Principale page de l'application Web #}
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="ProjectManagmentWebApp">
 <head>
     <meta charset="UTF-8" />
     <title>ProjectManagment Application</title>
     {% block assets %}{% include 'MaxProjectWebAppBundle:Globals:assets.html.twig'%}{% endblock %}
 </head>
-<body >
+<body ng-controller="ProjectsListCtrl">
 {% block mainContent %}
 {% endblock %}
 </body>

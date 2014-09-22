@@ -2,6 +2,10 @@
 
 {% block mainContent %}
     {% verbatim %}
-       21 + 21 = {{ 21 + 21 }}
+    <ul>
+        <li ng-repeat="project in projects">
+            {{project.name}}
+        </li>
+    </ul>
     {% endverbatim %}
 {% endblock %}

@@ -1,1 +1,3 @@
-//Point d'entrée standard de l'application web
+//Point d'entrée de l'application web
+
+var phonecatApp = angular.module('ProjectManagmentWebApp', []);
