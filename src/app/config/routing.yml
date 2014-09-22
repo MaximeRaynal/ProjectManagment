@@ -1,3 +1,7 @@
+max_project_web_app:
+    resource: "@MaxProjectWebAppBundle/Resources/config/routing.yml"
+    prefix:   /
+
 max_project_project_managment:
     resource: "@MaxProjectProjectManagmentBundle/Resources/config/routing.yml"
     prefix:   /api/
