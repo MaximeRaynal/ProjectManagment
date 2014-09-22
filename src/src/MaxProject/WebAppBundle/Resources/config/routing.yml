@@ -1,0 +1,3 @@
+max_project_web_app_homepage:
+    path:     /
+    defaults: { _controller: MaxProjectWebAppBundle:Default:index }

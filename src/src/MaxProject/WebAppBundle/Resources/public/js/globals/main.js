@@ -1,0 +1,1 @@
+//Point d'entrée standard de l'application web

@@ -1,0 +1,13 @@
+{# Charge via assetics les principaux asset JS et CSS
+   présent sur toutes les pages #}
+{% block assets %}
+
+{% stylesheets 'bundles/maxproject_webapp/css/*' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+
+{% javascripts '@MaxProjectWebAppBundle/Resources/public/js/globals/*' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+{% endblock %}

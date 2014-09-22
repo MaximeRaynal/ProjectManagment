@@ -1,0 +1,7 @@
+parameters:
+#    max_project_web_app.example.class: MaxProject\WebAppBundle\Example
+
+services:
+#    max_project_web_app.example:
+#        class: %max_project_web_app.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
