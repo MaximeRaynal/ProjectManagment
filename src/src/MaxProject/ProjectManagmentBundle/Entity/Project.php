@@ -181,6 +181,8 @@ class Project implements \JsonSerializable {
     public function JsonSerialize()
     {
         $vars = get_object_vars($this);
+        $vars['dateStart'] = $this->dateStart->getTimestamp();
+        $vars['dateEnd'] = $this->dateEnd->getTimestamp();
 
         return $vars;
     }
