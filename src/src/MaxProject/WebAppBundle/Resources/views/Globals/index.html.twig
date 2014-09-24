@@ -2,10 +2,6 @@
 
 {% block mainContent %}
     {% verbatim %}
-    <ul>
-        <li ng-repeat="project in projects">
-            {{project.name}}
-        </li>
-    </ul>
+        <div class="container" ng-view></div>
     {% endverbatim %}
 {% endblock %}
