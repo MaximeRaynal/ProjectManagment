@@ -1,3 +1,7 @@
-max_project_web_app_homepage:
+MaxProjectWebApp_Homepage:
     path:     /
     defaults: { _controller: MaxProjectWebAppBundle:Default:index }
+
+MaxProjectWebApp_Views:
+    path: /views/{resources}
+    defaults: { _controller: MaxProjectWebAppBundle:Default:resources}
