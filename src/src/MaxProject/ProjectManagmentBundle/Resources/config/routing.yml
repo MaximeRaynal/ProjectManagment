@@ -2,10 +2,6 @@ MaxProjectProjectManagment_homepage:
     path:     /
     defaults: { _controller: MaxProjectProjectManagmentBundle:Project:index }
 
-MaxProjectProjectManagment_resetTestData:
-    path: /resetTestData
-    defaults: { _controller: MaxProjectProjectManagmentBundle:Project:resetTestData}
-
 MaxProjectProjectManagment_phpinfo:
     path: /phpinfo
     defaults: { _controller: MaxProjectProjectManagmentBundle:Project:phpinfo}
