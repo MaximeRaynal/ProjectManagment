@@ -2,7 +2,7 @@
    présent sur toutes les pages #}
 {% block assets %}
 
-{% stylesheets '@MaxProjectWebAppBundle/Resources/public/css/*' filter='cssrewrite' %}
+{% stylesheets '@MaxProjectWebAppBundle/Resources/public/css/*' %}
     <link rel="stylesheet" href="{{ asset_url }}" />
 {% endstylesheets %}
 
@@ -10,6 +10,8 @@
                 '@MaxProjectWebAppBundle/Resources/public/js/globals/angular-route.js'
                 '@MaxProjectWebAppBundle/Resources/public/js/globals/jquery.js'
                 '@MaxProjectWebAppBundle/Resources/public/js/globals/bootstrap.js'
+                '@MaxProjectWebAppBundle/Resources/public/js/globals/sb-admin-2.js'
+                '@MaxProjectWebAppBundle/Resources/public/js/globals/plugins/metisMenu/metisMenu.js'
                 '@MaxProjectWebAppBundle/Resources/public/js/controller/*' %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}

@@ -1,5 +1,15 @@
-<ul>
-    <li ng-repeat="project in projects">
-        {{project.name}}
-    </li>
-</ul>
+<div class="col-lg-4" ng-repeat="project in projects | filter:searchInput">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {{project.name}}
+        </div>
+        <div class="panel-body">
+            <p>{{project.description}}</p>
+        </div>
+        <div class="panel-footer">
+            <span class="pull-left">Ouvrir le projet</span>
+            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
