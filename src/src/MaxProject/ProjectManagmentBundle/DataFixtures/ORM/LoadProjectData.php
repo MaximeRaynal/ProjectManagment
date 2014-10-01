@@ -26,6 +26,43 @@ class LoadProjectData implements FixtureInterface
         //$project->setAxe(array('Features', 'Bugs'));
 
         $manager->persist($project);
+
+        $project = new Project();
+        $project->setName('Project 2');
+        $project->setDescription('This is another project');
+        $project->setDateStart(new DateTime("now"));
+        $project->setDateEnd(new DateTime());
+        //$project->setMembers(null);
+        //$project->setBacklog(null);
+        $project->setAvaibleLabel(array('System', 'Server', 'Client', 'BDD'));
+        //$project->setAxe(array('Features', 'Bugs'));
+
+        $manager->persist($project);
+
+        $project = new Project();
+        $project->setName('Awesome project');
+        $project->setDescription('This is the biggest project with a so loooooooong description because i won\'t test the template');
+        $project->setDateStart(new DateTime("now"));
+        $project->setDateEnd(new DateTime());
+        //$project->setMembers(null);
+        //$project->setBacklog(null);
+        $project->setAvaibleLabel(array('System', 'Server', 'Client', 'BDD'));
+        //$project->setAxe(array('Features', 'Bugs'));
+
+        $manager->persist($project);
+
+        $project = new Project();
+        $project->setName('Legacy Project');
+        $project->setDescription('The legacy project<br />
+                                 With multiline description');
+        $project->setDateStart(new DateTime("now"));
+        $project->setDateEnd(new DateTime());
+        //$project->setMembers(null);
+        //$project->setBacklog(null);
+        $project->setAvaibleLabel(array('System', 'Server', 'Client', 'BDD'));
+        //$project->setAxe(array('Features', 'Bugs'));
+
+        $manager->persist($project);
         $manager->flush();
     }
 }
