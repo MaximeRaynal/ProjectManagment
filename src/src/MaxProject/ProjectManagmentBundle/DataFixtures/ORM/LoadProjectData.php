@@ -1,20 +1,21 @@
 <?php
 namespace MaxProject\ProjectManagmentBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
 use MaxProject\ProjectManagmentBundle\Entity\Project;
 
 use DateTime;
 
-class LoadProjectData implements FixtureInterface
+class LoadProjectData extends AbstractFixture implements OrderedFixtureInterface
 {
     /**
      * {@inheritDoc}
      */
-    public function load(ObjectManager $manager)
-    {
+    public function load(ObjectManager $manager) {
+
         $project = new Project();
         $project->setName('Test Project');
         $project->setDescription('This is a description for the test project !');
@@ -23,8 +24,8 @@ class LoadProjectData implements FixtureInterface
         //$project->setMembers(null);
         //$project->setBacklog(null);
         $project->setAvaibleLabel(array('System', 'Server', 'Client', 'BDD'));
-        //$project->setAxe(array('Features', 'Bugs'));
-
+        $project->setAxes(array('Feature', 'Bugs'));
+        $this->addReference('prj1', $project);
         $manager->persist($project);
 
         $project = new Project();
@@ -35,8 +36,7 @@ class LoadProjectData implements FixtureInterface
         //$project->setMembers(null);
         //$project->setBacklog(null);
         $project->setAvaibleLabel(array('System', 'Server', 'Client', 'BDD'));
-        //$project->setAxe(array('Features', 'Bugs'));
-
+        $this->addReference('prj2', $project);
         $manager->persist($project);
 
         $project = new Project();
@@ -47,8 +47,7 @@ class LoadProjectData implements FixtureInterface
         //$project->setMembers(null);
         //$project->setBacklog(null);
         $project->setAvaibleLabel(array('System', 'Server', 'Client', 'BDD'));
-        //$project->setAxe(array('Features', 'Bugs'));
-
+        $this->addReference('prj3', $project);
         $manager->persist($project);
 
         $project = new Project();
@@ -60,9 +59,12 @@ class LoadProjectData implements FixtureInterface
         //$project->setMembers(null);
         //$project->setBacklog(null);
         $project->setAvaibleLabel(array('System', 'Server', 'Client', 'BDD'));
-        //$project->setAxe(array('Features', 'Bugs'));
-
+        $this->addReference('prj4', $project);
         $manager->persist($project);
         $manager->flush();
+    }
+
+    public function getOrder() {
+        return 1;
     }
 }

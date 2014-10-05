@@ -2,6 +2,8 @@
 
 namespace MaxProject\ProjectManagmentBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * Un project est le plus haut niveau atomique
  */
@@ -28,6 +30,9 @@ class Project implements \JsonSerializable {
     private $sprints;
 
     public function __construct() {
+        $members = new ArrayCollection();
+        $backlog = new ArrayCollection();
+        $sprints = new ArrayCollection();
     }
 
     /**
@@ -185,5 +190,9 @@ class Project implements \JsonSerializable {
         $vars['dateEnd'] = $this->dateEnd->getTimestamp();
 
         return $vars;
+    }
+
+    public function addTask(\MaxProject\ProjectManagmentBundle\Entity\Task $task) {
+        $backlog[] = $task;
     }
 }

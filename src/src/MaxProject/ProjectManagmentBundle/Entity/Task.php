@@ -2,6 +2,8 @@
 
 namespace MaxProject\ProjectManagmentBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 abstract class AvancmentState {
     const TODO = "TODO";
     const DOING = "DOING";
@@ -41,7 +43,9 @@ class Task {
     private $subTask;
 
     public function __construct() {
-
+        $attachments = new ArrayCollection();
+        $associateMembers = new ArrayCollection();
+        $subTask = new ArrayCollection();
     }
 
     /**
@@ -346,6 +350,8 @@ class Task {
     public function setProject(\MaxProject\ProjectManagmentBundle\Entity\Project $project = null)
     {
         $this->project = $project;
+
+        $project->addTask($this);
 
         return $this;
     }
