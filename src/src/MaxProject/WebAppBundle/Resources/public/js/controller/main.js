@@ -11,9 +11,9 @@ projectManagmentApp.config(['$routeProvider',
             templateUrl: 'views/projectsList.part.html',
             controller: 'ProjectsListCtrl'
         }).
-        when('/projects/:projectId', {
+        when('/project/id-:projectId', {
             templateUrl: 'views/projectDetail.part.html',
-            controller: 'ProjectCtrl'
+            controller: 'ProjectsDetailCtrl'
         }).
         otherwise({
             redirectTo: '/projects'
