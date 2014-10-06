@@ -19,13 +19,13 @@ MaxProject\ProjectManagmentBundle\Entity\Project:
         axes:
             type: array
 
-    onToMany:
+    oneToMany:
         members:
             targetEntity: User
             mappedBy: id
         backlog:
             targetEntity: Task
-            mappedBy: id
+            mappedBy: project
         sprints:
             targetEntity: Sprint
             mappedBy: id

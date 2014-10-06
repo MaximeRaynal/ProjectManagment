@@ -3,7 +3,7 @@ MaxProject\ProjectManagmentBundle\Entity\Task:
     table: Task
     id:
         id:
-            type: string
+            type: integer
             generator: { strategy: AUTO }
     fields:
         shortName:
@@ -37,9 +37,6 @@ MaxProject\ProjectManagmentBundle\Entity\Task:
         project:
             targetEntity: Project
             inversedBy: backlog
-            joinColumn:
-                name: projectId
-                referencedColumnName: id
         parentTask:
             targetEntity: Task
             inversedBy: subTask
