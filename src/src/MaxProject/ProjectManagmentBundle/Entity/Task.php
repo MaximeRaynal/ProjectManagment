@@ -12,7 +12,7 @@ abstract class AvancmentState {
     const ABORT = "ABORT";
 }
 
-class Task {
+class Task implements  \JsonSerializable {
 
     private $id;
 
@@ -343,6 +343,7 @@ class Task {
 
     /**
      * Set project
+     * Set the project for the task and add it to project backlog
      *
      * @param \MaxProject\ProjectManagmentBundle\Entity\Project $project
      * @return Task
@@ -350,8 +351,6 @@ class Task {
     public function setProject(\MaxProject\ProjectManagmentBundle\Entity\Project $project = null)
     {
         $this->project = $project;
-
-        $project->addTask($this);
 
         return $this;
     }
@@ -387,5 +386,14 @@ class Task {
     public function getParentTask()
     {
         return $this->parentTask;
+    }
+
+    public function JsonSerialize()
+    {
+        $vars = get_object_vars($this);
+
+        unset($vars['project']);
+
+        return $vars;
     }
 }

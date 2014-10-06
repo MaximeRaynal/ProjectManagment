@@ -30,9 +30,9 @@ class Project implements \JsonSerializable {
     private $sprints;
 
     public function __construct() {
-        $members = new ArrayCollection();
-        $backlog = new ArrayCollection();
-        $sprints = new ArrayCollection();
+        $this->members = new ArrayCollection();
+        $this->backlog = new ArrayCollection();
+        $this->sprints = new ArrayCollection();
     }
 
     /**
@@ -183,16 +183,114 @@ class Project implements \JsonSerializable {
         return $this->axes;
     }
 
+
+
+    /**
+     * Add members
+     *
+     * @param \MaxProject\ProjectManagmentBundle\Entity\User $members
+     * @return Project
+     */
+    public function addMember(\MaxProject\ProjectManagmentBundle\Entity\User $members)
+    {
+        $this->members[] = $members;
+
+        return $this;
+    }
+
+    /**
+     * Remove members
+     *
+     * @param \MaxProject\ProjectManagmentBundle\Entity\User $members
+     */
+    public function removeMember(\MaxProject\ProjectManagmentBundle\Entity\User $members)
+    {
+        $this->members->removeElement($members);
+    }
+
+    /**
+     * Get members
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMembers()
+    {
+        return $this->members;
+    }
+
+    /**
+     * Add backlog
+     *
+     * @param \MaxProject\ProjectManagmentBundle\Entity\Task $backlog
+     * @return Project
+     */
+    public function addBacklog(\MaxProject\ProjectManagmentBundle\Entity\Task $backlog)
+    {
+        $this->backlog[] = $backlog;
+
+        return $this;
+    }
+
+    /**
+     * Remove backlog
+     *
+     * @param \MaxProject\ProjectManagmentBundle\Entity\Task $backlog
+     */
+    public function removeBacklog(\MaxProject\ProjectManagmentBundle\Entity\Task $backlog)
+    {
+        $this->backlog->removeElement($backlog);
+    }
+
+    /**
+     * Get backlog
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getBacklog()
+    {
+        return $this->backlog;
+    }
+
+    /**
+     * Add sprints
+     *
+     * @param \MaxProject\ProjectManagmentBundle\Entity\Sprint $sprints
+     * @return Project
+     */
+    public function addSprint(\MaxProject\ProjectManagmentBundle\Entity\Sprint $sprints)
+    {
+        $this->sprints[] = $sprints;
+
+        return $this;
+    }
+
+    /**
+     * Remove sprints
+     *
+     * @param \MaxProject\ProjectManagmentBundle\Entity\Sprint $sprints
+     */
+    public function removeSprint(\MaxProject\ProjectManagmentBundle\Entity\Sprint $sprints)
+    {
+        $this->sprints->removeElement($sprints);
+    }
+
+    /**
+     * Get sprints
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSprints()
+    {
+        return $this->sprints;
+    }
+
     public function JsonSerialize()
     {
         $vars = get_object_vars($this);
         $vars['dateStart'] = $this->dateStart->getTimestamp();
         $vars['dateEnd'] = $this->dateEnd->getTimestamp();
+        $vars['backlog'] = $this->backlog->toArray();
 
         return $vars;
-    }
-
-    public function addTask(\MaxProject\ProjectManagmentBundle\Entity\Task $task) {
-        $backlog[] = $task;
     }
 }
