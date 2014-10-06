@@ -24,15 +24,6 @@ class LoadProjectData extends AbstractFixture implements OrderedFixtureInterface
         $project->setAvaibleLabel(array('System', 'Server', 'Client', 'BDD'));
         $project->setAxes(array('Feature', 'Bugs'));
         $this->addReference('prj1', $project);
-
-        $task = $this->getReference('t1');
-
-        $project->addBacklog($task);
-        $task->setProject($project);
-
-        echo '--- ' . $project->getBacklog()->count();
-
-        $manager->persist($task);
         $manager->persist($project);
 
         $manager->flush();
@@ -74,6 +65,6 @@ class LoadProjectData extends AbstractFixture implements OrderedFixtureInterface
     }
 
     public function getOrder() {
-        return 2;
+        return 1;
     }
 }
