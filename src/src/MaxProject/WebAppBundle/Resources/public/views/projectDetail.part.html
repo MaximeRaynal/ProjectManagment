@@ -1,7 +1,7 @@
 <div class="col-lg-12">
     <h1 class="page-header">{{ project.name }}</h1>
 </div>
-<div class="row">
+<div class="row"> <!--Shorcuts panel-->
     <div class="col-lg-3 col-md-6">
         <div class="panel panel-primary">
             <div class="panel-heading">
@@ -17,7 +17,7 @@
             </div>
             <a href="#">
                 <div class="panel-footer">
-                    <span class="pull-left">View Details</span>
+                    <span class="pull-left">View all Tasks</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
@@ -39,7 +39,7 @@
             </div>
             <a href="#">
                 <div class="panel-footer">
-                    <span class="pull-left">View Details</span>
+                    <span class="pull-left">View all Bugs</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
@@ -55,17 +55,86 @@
                     </div>
                     <div class="col-xs-9 text-right">
                         <div class="huge">{{project.backlog.length}}</div>
-                        <div>Tasks to test</div>
+                        <div>Test needed</div>
                     </div>
                 </div>
             </div>
             <a href="#">
                 <div class="panel-footer">
-                    <span class="pull-left">View Details</span>
+                    <span class="pull-left">View pending Tests</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-calendar fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">4 / 12</div>
+                        <div>Sprint Number</div>
+                    </div>
+                </div>
+            </div>
+            <a href="#">
+                <div class="panel-footer">
+                    <span class="pull-left">See Sprint Calendar</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- End Shorcuts panel-->
+<div class="row">
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> Burndowns Chart
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            Unit
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li>
+                                <a href="#">By Task</a>
+                            </li>
+                            <li>
+                                <a href="#">By Jour / Homme</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div style="position: relative;" id="morris-area-chart">
+                    <svg style="overflow: hidden; position: relative; top: -0.75px;" xmlns="http://www.w3.org/2000/svg" width="979" version="1.1" height="347"><desc>Created with RaphaÃ«l 2.1.2</desc><defs></defs><text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="end" y="312" x="56.5" style="text-anchor: end; font: 12px sans-serif;"><tspan dy="4">0</tspan></text><path stroke-width="0.5" d="M69,312H954" stroke="#aaaaaa" fill="none" style=""></path><text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="end" y="240.25" x="56.5" style="text-anchor: end; font: 12px sans-serif;"><tspan dy="4">7,500</tspan></text><path stroke-width="0.5" d="M69,240.25H954" stroke="#aaaaaa" fill="none" style=""></path><text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="end" y="168.5" x="56.5" style="text-anchor: end; font: 12px sans-serif;"><tspan dy="4">15,000</tspan></text><path stroke-width="0.5" d="M69,168.5H954" stroke="#aaaaaa" fill="none" style=""></path><text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="end" y="96.75000000000003" x="56.5" style="text-anchor: end; font: 12px sans-serif;"><tspan dy="4.000000000000028">22,500</tspan></text><path stroke-width="0.5" d="M69,96.75000000000003H954" stroke="#aaaaaa" fill="none" style=""></path><text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="end" y="25" x="56.5" style="text-anchor: end; font: 12px sans-serif;"><tspan dy="4">30,000</tspan></text><path stroke-width="0.5" d="M69,25H954" stroke="#aaaaaa" fill="none" style=""></path><text transform="matrix(1,0,0,1,0,7.5)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="324.5" x="920.6629537744924" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2012-05</tspan></text><text transform="matrix(1,0,0,1,0,7.5)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="324.5" x="823.9227887195584" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2012-02</tspan></text><text transform="matrix(1,0,0,1,0,7.5)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="324.5" x="724.9870386309553" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2011-11</tspan></text><text transform="matrix(1,0,0,1,0,7.5)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="324.5" x="626.0064806845223" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2011-08</tspan></text><text transform="matrix(1,0,0,1,0,7.5)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="324.5" x="527.0707305959191" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2011-05</tspan></text><text transform="matrix(1,0,0,1,0,7.5)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="324.5" x="431.40595412890485" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2011-02</tspan></text><text transform="matrix(1,0,0,1,0,7.5)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="324.5" x="332.4702040403017" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2010-11</tspan></text><text transform="matrix(1,0,0,1,0,7.5)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="324.5" x="233.48964609386866" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2010-08</tspan></text><text transform="matrix(1,0,0,1,0,7.5)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="324.5" x="134.55389600526556" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2010-05</tspan></text><path fill-opacity="1" d="M69,261.1723C93.72273555769328,255.91063333333335,143.16820667307985,244.99037704983013,167.89094223077313,240.12563333333333C192.6248797529239,235.25868538316345,242.09275479722544,228.90513542757418,266.8266923193762,222.24553333333336C291.30298465900455,215.65530209424085,340.25556933826135,189.09273714039128,364.7318616778897,187.12630000000001C388.92810490608065,185.18236214039126,437.32059136246266,205.17383090603772,461.5168345906536,206.60403333333335C486.2395701483469,208.06535590603772,535.6850412637334,197.7192121442054,560.4077768214268,198.69240000000002C585.1417143435775,199.66602881087204,634.609589387879,231.66659633507854,659.3435269100298,214.3913C683.8198192496582,197.29595466841187,732.772403928915,69.54909163042652,757.2486962685433,61.209833333333364C781.7137866437142,52.87439163042652,830.643967394056,135.46491434752906,855.1090577692269,147.69250000000002C879.8317933269202,160.04885601419574,929.2772644423067,156.58232500000003,954,159.5456L954,312L69,312Z" stroke="none" fill="#7cb47c" style="fill-opacity: 1;"></path><path stroke-width="3" d="M69,261.1723C93.72273555769328,255.91063333333335,143.16820667307985,244.99037704983013,167.89094223077313,240.12563333333333C192.6248797529239,235.25868538316345,242.09275479722544,228.90513542757418,266.8266923193762,222.24553333333336C291.30298465900455,215.65530209424085,340.25556933826135,189.09273714039128,364.7318616778897,187.12630000000001C388.92810490608065,185.18236214039126,437.32059136246266,205.17383090603772,461.5168345906536,206.60403333333335C486.2395701483469,208.06535590603772,535.6850412637334,197.7192121442054,560.4077768214268,198.69240000000002C585.1417143435775,199.66602881087204,634.609589387879,231.66659633507854,659.3435269100298,214.3913C683.8198192496582,197.29595466841187,732.772403928915,69.54909163042652,757.2486962685433,61.209833333333364C781.7137866437142,52.87439163042652,830.643967394056,135.46491434752906,855.1090577692269,147.69250000000002C879.8317933269202,160.04885601419574,929.2772644423067,156.58232500000003,954,159.5456" stroke="#4da74d" fill="none" style=""></path><circle stroke-width="1" style="" stroke="#ffffff" fill="#4da74d" r="2" cy="261.1723" cx="69"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#4da74d" r="2" cy="240.12563333333333" cx="167.89094223077313"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#4da74d" r="2" cy="222.24553333333336" cx="266.8266923193762"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#4da74d" r="2" cy="187.12630000000001" cx="364.7318616778897"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#4da74d" r="2" cy="206.60403333333335" cx="461.5168345906536"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#4da74d" r="2" cy="198.69240000000002" cx="560.4077768214268"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#4da74d" r="2" cy="214.3913" cx="659.3435269100298"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#4da74d" r="2" cy="61.209833333333364" cx="757.2486962685433"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#4da74d" r="2" cy="147.69250000000002" cx="855.1090577692269"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#4da74d" r="2" cy="159.5456" cx="954"></circle><path fill-opacity="1" d="M69,286.4952666666667C93.72273555769328,280.7409166666667,143.16820667307985,268.5171625047188,167.89094223077313,263.47786666666667C192.6248797529239,258.4362875047188,242.09275479722544,248.92696666666666,266.8266923193762,246.17176666666666C291.30298465900455,243.44526666666664,340.25556933826135,243.7676682873034,364.7318616778897,241.55106666666666C388.92810490608065,239.35982662063674,437.32059136246266,231.6149211815892,461.5168345906536,228.5404C486.2395701483469,225.39897951492253,535.6850412637334,216.55698369007172,560.4077768214268,216.6873C585.1417143435775,216.8176753567384,634.609589387879,242.89876457242582,659.3435269100298,229.58316666666667C683.8198192496582,216.40627290575918,732.772403928915,118.53030453192953,757.2486962685433,110.71733333333336C781.7137866437142,102.90793786526287,830.643967394056,158.89161778638123,855.1090577692269,167.0937C879.8317933269202,175.3821594530479,929.2772644423067,174.28305,954,176.67950000000002L954,312L69,312Z" stroke="none" fill="#a7b3bc" style="fill-opacity: 1;"></path><path stroke-width="3" d="M69,286.4952666666667C93.72273555769328,280.7409166666667,143.16820667307985,268.5171625047188,167.89094223077313,263.47786666666667C192.6248797529239,258.4362875047188,242.09275479722544,248.92696666666666,266.8266923193762,246.17176666666666C291.30298465900455,243.44526666666664,340.25556933826135,243.7676682873034,364.7318616778897,241.55106666666666C388.92810490608065,239.35982662063674,437.32059136246266,231.6149211815892,461.5168345906536,228.5404C486.2395701483469,225.39897951492253,535.6850412637334,216.55698369007172,560.4077768214268,216.6873C585.1417143435775,216.8176753567384,634.609589387879,242.89876457242582,659.3435269100298,229.58316666666667C683.8198192496582,216.40627290575918,732.772403928915,118.53030453192953,757.2486962685433,110.71733333333336C781.7137866437142,102.90793786526287,830.643967394056,158.89161778638123,855.1090577692269,167.0937C879.8317933269202,175.3821594530479,929.2772644423067,174.28305,954,176.67950000000002" stroke="#7a92a3" fill="none" style=""></path><circle stroke-width="1" style="" stroke="#ffffff" fill="#7a92a3" r="2" cy="286.4952666666667" cx="69"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#7a92a3" r="2" cy="263.47786666666667" cx="167.89094223077313"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#7a92a3" r="2" cy="246.17176666666666" cx="266.8266923193762"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#7a92a3" r="2" cy="241.55106666666666" cx="364.7318616778897"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#7a92a3" r="2" cy="228.5404" cx="461.5168345906536"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#7a92a3" r="2" cy="216.6873" cx="560.4077768214268"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#7a92a3" r="2" cy="229.58316666666667" cx="659.3435269100298"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#7a92a3" r="2" cy="110.71733333333336" cx="757.2486962685433"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#7a92a3" r="2" cy="167.0937" cx="855.1090577692269"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#7a92a3" r="2" cy="176.67950000000002" cx="954"></circle><path fill-opacity="1" d="M69,286.4952666666667C93.72273555769328,286.2274,143.16820667307985,288.1090333220083,167.89094223077313,285.4238C192.6248797529239,282.737349988675,242.09275479722544,266.19740453752183,266.8266923193762,265.00853333333333C291.30298465900455,263.8320462041885,340.25556933826135,278.24511754890676,364.7318616778897,275.96236666666664C388.92810490608065,273.70573421557344,437.32059136246266,249.1021788413098,461.5168345906536,246.851C486.2395701483469,244.55083717464316,535.6850412637334,255.37783067195167,560.4077768214268,257.757C585.1417143435775,260.13724733861835,634.609589387879,277.1919588132635,659.3435269100298,265.88866666666667C683.8198192496582,254.70311714659687,732.772403928915,174.81919334897384,757.2486962685433,167.80163333333334C781.7137866437142,160.7872850156405,830.643967394056,201.86110179154332,855.1090577692269,209.76103333333333C879.8317933269202,217.74416012487663,929.2772644423067,225.94065833333332,954,231.33386666666667L954,312L69,312Z" stroke="none" fill="#2577b5" style="fill-opacity: 1;"></path><path stroke-width="3" d="M69,286.4952666666667C93.72273555769328,286.2274,143.16820667307985,288.1090333220083,167.89094223077313,285.4238C192.6248797529239,282.737349988675,242.09275479722544,266.19740453752183,266.8266923193762,265.00853333333333C291.30298465900455,263.8320462041885,340.25556933826135,278.24511754890676,364.7318616778897,275.96236666666664C388.92810490608065,273.70573421557344,437.32059136246266,249.1021788413098,461.5168345906536,246.851C486.2395701483469,244.55083717464316,535.6850412637334,255.37783067195167,560.4077768214268,257.757C585.1417143435775,260.13724733861835,634.609589387879,277.1919588132635,659.3435269100298,265.88866666666667C683.8198192496582,254.70311714659687,732.772403928915,174.81919334897384,757.2486962685433,167.80163333333334C781.7137866437142,160.7872850156405,830.643967394056,201.86110179154332,855.1090577692269,209.76103333333333C879.8317933269202,217.74416012487663,929.2772644423067,225.94065833333332,954,231.33386666666667" stroke="#0b62a4" fill="none" style=""></path><circle stroke-width="1" style="" stroke="#ffffff" fill="#0b62a4" r="2" cy="286.4952666666667" cx="69"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#0b62a4" r="2" cy="285.4238" cx="167.89094223077313"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#0b62a4" r="2" cy="265.00853333333333" cx="266.8266923193762"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#0b62a4" r="2" cy="275.96236666666664" cx="364.7318616778897"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#0b62a4" r="2" cy="246.851" cx="461.5168345906536"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#0b62a4" r="2" cy="257.757" cx="560.4077768214268"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#0b62a4" r="2" cy="265.88866666666667" cx="659.3435269100298"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#0b62a4" r="2" cy="167.80163333333334" cx="757.2486962685433"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#0b62a4" r="2" cy="209.76103333333333" cx="855.1090577692269"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#0b62a4" r="2" cy="231.33386666666667" cx="954"></circle></svg><div style="display: none; left: 7px; top: 182px;" class="morris-hover morris-default-style"><div class="morris-hover-row-label">2010 Q1</div><div class="morris-hover-point" style="color: #0b62a4">
+                iPhone:
+                2,666
+            </div><div class="morris-hover-point" style="color: #7A92A3">
+            iPad:
+            -
+        </div><div class="morris-hover-point" style="color: #4da74d">
+        iPod Touch:
+        2,647
+    </div></div></div>
+</div>
+<!-- /.panel-body -->
+</div>
+</div>
+<div class="col-lg-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-tasks fa-fw"></i> Advencment Report
         </div>
     </div>
 </div>
