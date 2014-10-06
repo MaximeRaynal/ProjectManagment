@@ -21,12 +21,21 @@ class LoadProjectData extends AbstractFixture implements OrderedFixtureInterface
         $project->setDescription('This is a description for the test project !');
         $project->setDateStart(new DateTime("now"));
         $project->setDateEnd(new DateTime());
-        //$project->setMembers(null);
-        //$project->setBacklog(null);
         $project->setAvaibleLabel(array('System', 'Server', 'Client', 'BDD'));
         $project->setAxes(array('Feature', 'Bugs'));
         $this->addReference('prj1', $project);
+
+        $task = $this->getReference('t1');
+
+        $project->addBacklog($task);
+        $task->setProject($project);
+
+        echo '--- ' . $project->getBacklog()->count();
+
+        $manager->persist($task);
         $manager->persist($project);
+
+        $manager->flush();
 
         $project = new Project();
         $project->setName('Project 2');
@@ -41,7 +50,7 @@ class LoadProjectData extends AbstractFixture implements OrderedFixtureInterface
 
         $project = new Project();
         $project->setName('Awesome project');
-        $project->setDescription('This is the biggest project with a so loooooooong description because i won\'t test the template');
+        $project->setDescription('This is the biggest project with a so loooooooong description because i want test the template');
         $project->setDateStart(new DateTime("now"));
         $project->setDateEnd(new DateTime());
         //$project->setMembers(null);
@@ -65,6 +74,6 @@ class LoadProjectData extends AbstractFixture implements OrderedFixtureInterface
     }
 
     public function getOrder() {
-        return 1;
+        return 2;
     }
 }

@@ -24,13 +24,21 @@ class LoadTaskData extends AbstractFixture implements OrderedFixtureInterface
         $task->setDifficulty(1);
         $task->setLabels('Client', 'Server');
         $task->setDueDate(new DateTime("now"));
-        $task->setState(AvancmentState::TODO);
-        $task->setProject($this->getReference('prj1'));
+        $task->setState(AvancmentState::TODO);;
+
+        /*$project = $this->getReference('prj1');
+
+        $task->setProject($project);
+        $project->addBacklog($task);*/
+
+        $this->setReference('t1', $task);
         $manager->persist($task);
 
+
+        $manager->flush();
     }
 
     public function getOrder() {
-        return 2;
+        return 1;
     }
 }
